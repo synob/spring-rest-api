@@ -1,5 +1,6 @@
 package com.rest.api.controller.v1;
 
+import com.rest.api.advice.exception.CUserNotFoundException;
 import com.rest.api.entity.User;
 import com.rest.api.model.response.CommonResult;
 import com.rest.api.model.response.ListResult;
@@ -44,8 +45,8 @@ public class UserController {
 
   @ApiOperation(value = "회원 단건 조회", notes = "userId 회원을 조회한다")
   @GetMapping(value = "/user/{msrl}")
-  public SingleResult<User> findUserById(@PathVariable long msrl){
-    return responseService.getSingleResult(userJpaRepo.findById(msrl).orElse(null));
+  public SingleResult<User> findUserById(@PathVariable long msrl) {
+    return responseService.getSingleResult(userJpaRepo.findById(msrl).orElseThrow(CUserNotFoundException::new));
   }
 
   @ApiOperation(value = "회원 입력", notes = "회원을 입력한다.")
