@@ -34,8 +34,12 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-}
+	implementation 'io.springfox:springfox-swagger2:2.6.1'
+	implementation 'io.springfox:springfox-swagger2-ui:2.6.1'
+	//Swagger는 최신 버전이 2.9.2지만 2.6.1 이상의 버전은 세팅이 잘 안되거나 Web UI가 기존 버전에 비해 매우 불편해졌습니다. 그래서 2.6.1 버전 사용을 추천합니다.
 
+
+}
 test {
 	useJUnitPlatform()
 }
