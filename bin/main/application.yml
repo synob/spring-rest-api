@@ -17,4 +17,7 @@ spring:
   messages:
     basename: i18n/exception
     encoding: UTF-8
+  jwt:
+    secret: syno1234!@#$
+
 debug: true
