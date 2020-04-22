@@ -40,7 +40,6 @@ public class SignController {
     @ApiParam(value = "비밀번호", required = true) @RequestParam String password){
       User user = userJpaRepo.findByUid(id).orElseThrow(CEmailSigninFailedException::new);
       if( !passwordEncoder.matches(password, user.getPassword())){
-        System.out.println("=========error cmail throws=======");
         throw new CEmailSigninFailedException();
       }
 
