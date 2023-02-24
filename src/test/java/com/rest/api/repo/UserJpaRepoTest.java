@@ -26,7 +26,7 @@ public class UserJpaRepoTest {
 
   @Test
   public void whenFindByUid_thenReturnUser(){
-     String uid = "syno@kt.com";
+     String uid = "nogary11@gmail.com";
      String name = "syno";
 
     userJpaRepo.save(User.builder().uid(uid)
